@@ -2,9 +2,10 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
+    "base-api": "libs/base-api",
     "crud-info": "apps/crud-info",
+    "crud-info-api": "apps/crud-info-api",
     "crud-info-e2e": "apps/crud-info-e2e"
   }
 }

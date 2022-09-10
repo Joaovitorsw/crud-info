@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  dev-db:
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: crud-info
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: 123
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:
+    name: my-worskpace-postgres

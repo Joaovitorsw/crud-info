@@ -1,0 +1,27 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/base-api/src",
+  "prefix": "my-workspace",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/base-api"
+      ],
+      "options": {
+        "jestConfig": "libs/base-api/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/base-api/**/*.ts",
+          "libs/base-api/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
