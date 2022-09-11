@@ -10,14 +10,14 @@ const ROUTES: Routes = [
   {
     path: 'auth',
     loadComponent: async () =>
-      (await import('./domain/auth/pages/auth-page/auth-page.component'))
-        .AuthPageComponent,
+      (await import('./domain/auth/pages/sing-in/sing-in.component'))
+        .SignInComponent,
   },
   {
-    path: 'auth/sing-in',
+    path: 'auth/sing-up',
     loadComponent: async () =>
-      (await import('./domain/auth/pages/sing-in/sing-in.component'))
-        .SingInComponent,
+      (await import('./domain/auth/pages/sing-up/sing-up.component'))
+        .SingUpComponent,
   },
   {
     path: 'home',

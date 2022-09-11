@@ -1,4 +1,3 @@
-/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
@@ -15,10 +14,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { Router, RouterModule } from '@angular/router';
 import { MyHotToastService } from 'apps/crud-info/src/app/core/services/hot-toast/hot-toast.service';
-import { catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs';
 import { AuthService } from '../../services/auth/auth.service';
+
 @Component({
-  selector: 'my-workspace-auth-page',
+  selector: 'my-workspace-sing-up',
   standalone: true,
   imports: [
     CommonModule,
@@ -31,18 +31,18 @@ import { AuthService } from '../../services/auth/auth.service';
     FormsModule,
     MatIconModule,
   ],
-  templateUrl: './auth-page.component.html',
-  styleUrls: ['./auth-page.component.scss'],
+  templateUrl: './sing-up.component.html',
+  styleUrls: ['./sing-up.component.scss'],
 })
-export class AuthPageComponent {
-  singUpForm = new FormGroup({
+export class SingUpComponent {
+  singInForm = new FormGroup({
+    name: new FormControl<string>('João Vitor'),
     email: new FormControl<string>('joaovitorsw@teste.com', [Validators.email]),
     password: new FormControl<string>('123456', [
       Validators.required,
       Validators.minLength(6),
     ]),
   });
-
   constructor(
     private readonly authService: AuthService,
     private readonly myHotToastService: MyHotToastService,
@@ -50,16 +50,24 @@ export class AuthPageComponent {
   ) {}
 
   submitForm() {
-    const { email, password } = this.singUpForm.value;
+    const { name, email, password } = this.singInForm.value;
+
+    if (!name || !email || !password) {
+      this.myHotToastService.error('Preencha todos os campos');
+      return;
+    }
 
     this.authService
-      .login({
-        email: email ?? '',
-        password: password ?? '',
+      .createUser({
+        name,
+        email,
+        password,
       })
       .pipe(
         catchError((error) => {
-          this.myHotToastService.error('Erro ao fazer login');
+          this.myHotToastService.error(
+            error.error.message ?? 'Erro ao criar usuário'
+          );
           throw error;
         })
       )

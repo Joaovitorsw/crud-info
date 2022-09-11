@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
@@ -14,9 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { Router, RouterModule } from '@angular/router';
 import { MyHotToastService } from 'apps/crud-info/src/app/core/services/hot-toast/hot-toast.service';
-import { catchError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { AuthService } from '../../services/auth/auth.service';
-
 @Component({
   selector: 'my-workspace-sing-in',
   standalone: true,
@@ -34,15 +34,15 @@ import { AuthService } from '../../services/auth/auth.service';
   templateUrl: './sing-in.component.html',
   styleUrls: ['./sing-in.component.scss'],
 })
-export class SingInComponent {
-  singInForm = new FormGroup({
-    name: new FormControl<string>('João Vitor'),
+export class SignInComponent {
+  singUpForm = new FormGroup({
     email: new FormControl<string>('joaovitorsw@teste.com', [Validators.email]),
     password: new FormControl<string>('123456', [
       Validators.required,
       Validators.minLength(6),
     ]),
   });
+
   constructor(
     private readonly authService: AuthService,
     private readonly myHotToastService: MyHotToastService,
@@ -50,24 +50,16 @@ export class SingInComponent {
   ) {}
 
   submitForm() {
-    const { name, email, password } = this.singInForm.value;
-
-    if (!name || !email || !password) {
-      this.myHotToastService.error('Preencha todos os campos');
-      return;
-    }
+    const { email, password } = this.singUpForm.value;
 
     this.authService
-      .createUser({
-        name,
-        email,
-        password,
+      .login({
+        email: email ?? '',
+        password: password ?? '',
       })
       .pipe(
         catchError((error) => {
-          this.myHotToastService.error(
-            error.error.message ?? 'Erro ao criar usuário'
-          );
+          this.myHotToastService.error('Erro ao fazer login');
           throw error;
         })
       )

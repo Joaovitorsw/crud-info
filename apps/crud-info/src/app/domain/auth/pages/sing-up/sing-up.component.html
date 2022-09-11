@@ -1,7 +1,17 @@
 <h1>Sing Up</h1>
-<h2>Entre com suas credencias</h2>
-<mat-icon> assignment_ind </mat-icon>
-<form [formGroup]="singUpForm">
+<h2>Cadastre suas credenciais</h2>
+<mat-icon> account_circle </mat-icon>
+<form [formGroup]="singInForm">
+  <mat-form-field appearance="outline">
+    <mat-label> Nome </mat-label>
+    <input
+      data-testid="name"
+      formControlName="name"
+      matInput
+      placeholder="Nome"
+      type="text"
+    />
+  </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label> Email </mat-label>
     <input
@@ -16,8 +26,8 @@
   <mat-form-field appearance="outline">
     <mat-label> Senha </mat-label>
     <input
-      formControlName="password"
       data-testid="password"
+      formControlName="password"
       matInput
       placeholder="Password"
       type="password"
@@ -30,9 +40,9 @@
     mat-raised-button
     color="primary"
   >
-    Login
+    Criar
   </button>
-  <a data-testid="router-link" [routerLink]="['sing-in']">
-    Não tem uma conta? Cadastre-se
+  <a data-testid="router-link" [routerLink]="['']">
+    Já possui conta ? Faça seu login aqui
   </a>
 </form>

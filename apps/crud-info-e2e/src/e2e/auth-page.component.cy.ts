@@ -9,6 +9,6 @@ describe('Sing Up Page', () => {
 
   it('should redirects user to sing-up page', () => {
     getAuthPageRouterLink().click();
-    cy.url().should('include', '/sing-in');
+    cy.url().should('include', '/sing-up');
   });
 });

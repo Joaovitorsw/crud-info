@@ -27,7 +27,7 @@ describe('Sing In Page', () => {
     cy.intercept('POST', 'http://localhost:5000/api/auth/sign-up').as(
       'createUser'
     );
-    cy.get('h1').contains('Sing In');
+    cy.get('h1').contains('Sing Up');
     getEmailInput().should('exist');
     getPasswordInput().should('exist');
     getSubmitButton().should('exist');

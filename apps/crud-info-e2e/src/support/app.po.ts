@@ -18,7 +18,7 @@ export const authPageUser = {
 
 export function loginWithDefaultUser() {
   cy.intercept('POST', 'http://localhost:5000/api/auth/sign-in').as('login');
-  cy.get('h1').contains('Sing Up');
+  cy.get('h1').contains('Sing In');
   getAuthPageEmailInput().should('exist');
   getAuthPagePasswordInput().should('exist');
   getAuthPageSubmitButton().should('exist');
