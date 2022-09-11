@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Você realmente deseja remover este veículo?</h1>
+<mat-icon> warning </mat-icon>
+<div mat-dialog-actions>
+  <button
+    mat-stroked-button
+    data-testid="remove-confirm-button"
+    (click)="confirm()"
+    color="warn"
+  >
+    Sim
+  </button>
+  <button
+    data-testid="remove-cancel-button"
+    mat-stroked-button
+    color="primary"
+    mat-dialog-close
+  >
+    Cancelar
+  </button>
+</div>

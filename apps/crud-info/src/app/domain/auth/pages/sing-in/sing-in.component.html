@@ -1,19 +1,32 @@
-<h1>Login</h1>
-<h2>Sing In</h2>
+<h1>Sing In</h1>
+<h2>Cadastre suas credenciais</h2>
 <mat-icon> account_circle </mat-icon>
 <form [formGroup]="singInForm">
   <mat-form-field appearance="outline">
     <mat-label> Nome </mat-label>
-    <input formControlName="name" matInput placeholder="Nome" type="text" />
+    <input
+      data-testid="name"
+      formControlName="name"
+      matInput
+      placeholder="Nome"
+      type="text"
+    />
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label> Email </mat-label>
-    <input formControlName="email" matInput placeholder="Email" type="email" />
+    <input
+      data-testid="email"
+      formControlName="email"
+      matInput
+      placeholder="Email"
+      type="email"
+    />
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label> Senha </mat-label>
     <input
+      data-testid="password"
       formControlName="password"
       matInput
       placeholder="Password"
@@ -21,8 +34,15 @@
     />
   </mat-form-field>
 
-  <button (click)="submitForm()" mat-raised-button color="primary">
+  <button
+    data-testid="submit"
+    (click)="submitForm()"
+    mat-raised-button
+    color="primary"
+  >
     Criar
   </button>
-  <a [routerLink]="['']"> Já possui conta ? Faça seu login aqui </a>
+  <a data-testid="router-link" [routerLink]="['']">
+    Já possui conta ? Faça seu login aqui
+  </a>
 </form>

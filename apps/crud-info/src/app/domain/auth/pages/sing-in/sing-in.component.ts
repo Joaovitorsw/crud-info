@@ -5,6 +5,7 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -36,8 +37,11 @@ import { AuthService } from '../../services/auth/auth.service';
 export class SingInComponent {
   singInForm = new FormGroup({
     name: new FormControl<string>('João Vitor'),
-    email: new FormControl<string>('joaovitorsw@teste.com'),
-    password: new FormControl<string>('123456'),
+    email: new FormControl<string>('joaovitorsw@teste.com', [Validators.email]),
+    password: new FormControl<string>('123456', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
   });
   constructor(
     private readonly authService: AuthService,

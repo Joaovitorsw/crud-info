@@ -1,0 +1,85 @@
+<h1 mat-dialog-title>{{ this.data ? 'Editar Veiculo' : 'Criar Veiculo' }}</h1>
+<form [formGroup]="vehicleForm">
+  <mat-form-field appearance="outline">
+    <mat-label> Placa </mat-label>
+    <input
+      matInput
+      data-testid="board"
+      formControlName="board"
+      placeholder="NPC-9191"
+      [mask]="'A{3}-0{4}'"
+      [validation]="false"
+      [dropSpecialCharacters]="false"
+      type="text"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label> Chassi </mat-label>
+    <input
+      matInput
+      data-testid="chassi"
+      formControlName="chassi"
+      placeholder="9BM6953049B683969"
+      [mask]="'A{17}'"
+      [validation]="false"
+      [dropSpecialCharacters]="false"
+      type="text"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label> Renavam </mat-label>
+    <input
+      matInput
+      data-testid="renavam"
+      formControlName="renavam"
+      placeholder="193585022"
+      [mask]="'A{9}'"
+      type="text"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label> Modelo </mat-label>
+    <input
+      formControlName="modelo"
+      data-testid="modelo"
+      matInput
+      placeholder="Fiat"
+      type="text"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label> Marca </mat-label>
+    <input
+      matInput
+      data-testid="marca"
+      formControlName="marca"
+      placeholder="Merc. Benz Basc."
+      type="text"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label> Ano </mat-label>
+    <input
+      matInput
+      formControlName="ano"
+      data-testid="ano"
+      placeholder="2009"
+      [mask]="'0{4}'"
+      type="text"
+    />
+  </mat-form-field>
+</form>
+<div mat-dialog-actions>
+  <button
+    data-testid="send-button"
+    (click)="sendData()"
+    mat-stroked-button
+    color="primary"
+    [disabled]="!vehicleForm.valid"
+  >
+    {{ this.data ? 'Salvar' : 'Criar' }}
+  </button>
+  <button data-testid="cancel-button" mat-stroked-button mat-dialog-close>
+    Cancelar
+  </button>
+</div>

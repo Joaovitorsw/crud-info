@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 export class BaseApiService<T> {
   readonly httpClient: HttpClient;
   constructor(
-    @Inject('CONTEXT') protected readonly CONTEXT: string,
+    @Inject('CONTEXT') readonly CONTEXT: string,
     protected injector: Injector,
-    @Inject('BASE_URL') protected readonly BASE_URL: string
+    @Inject('BASE_URL') readonly BASE_URL: string
   ) {
     this.httpClient = injector.get(HttpClient);
   }
@@ -29,6 +29,9 @@ export class BaseApiService<T> {
 
   protected create<T, C>(resource: T): Observable<C> {
     return this.httpClient.post<C>(`${this.BASE_URL}${this.CONTEXT}`, resource);
+  }
+  protected update<T, C>(resource: T): Observable<C> {
+    return this.httpClient.put<C>(`${this.BASE_URL}${this.CONTEXT}`, resource);
   }
 
   protected updateById<T>(id: string, resource: T): Observable<T> {

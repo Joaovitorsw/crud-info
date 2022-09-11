@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
@@ -5,6 +6,7 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -34,8 +36,11 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class AuthPageComponent {
   singUpForm = new FormGroup({
-    email: new FormControl<string>('joaovitorsw@teste.com'),
-    password: new FormControl<string>('123456'),
+    email: new FormControl<string>('joaovitorsw@teste.com', [Validators.email]),
+    password: new FormControl<string>('123456', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
   });
 
   constructor(
@@ -45,10 +50,12 @@ export class AuthPageComponent {
   ) {}
 
   submitForm() {
+    const { email, password } = this.singUpForm.value;
+
     this.authService
       .login({
-        email: this.singUpForm.controls.email.value ?? '',
-        password: this.singUpForm.controls.password.value ?? '',
+        email: email ?? '',
+        password: password ?? '',
       })
       .pipe(
         catchError((error) => {

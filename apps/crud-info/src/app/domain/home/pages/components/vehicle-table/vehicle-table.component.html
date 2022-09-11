@@ -1,1 +1,87 @@
-<p>vehicle-table works!</p>
+<figure>
+  <figcaption>Lista de Veículos</figcaption>
+
+  <div class="auto-size">
+    <ng-container *ngIf="dataSource$$ | async as dataSource">
+      <table
+        matSort
+        (matSortChange)="sortData($event)"
+        mat-table
+        [dataSource]="sortedData"
+      >
+        <ng-container matColumnDef="vehicleID">
+          <th mat-header-cell mat-sort-header="vehicleID" *matHeaderCellDef>
+            Veiculo ID
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.vehicleID }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="placa">
+          <th mat-header-cell mat-sort-header="placa" *matHeaderCellDef>
+            Placa
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.board }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="chassi">
+          <th mat-header-cell mat-sort-header="chassi" *matHeaderCellDef>
+            Chassi
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.chassi }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="renavam">
+          <th mat-header-cell mat-sort-header="renavam" *matHeaderCellDef>
+            Renavam
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.renavam }}</td>
+        </ng-container>
+        <ng-container matColumnDef="modelo">
+          <th mat-header-cell mat-sort-header="modelo" *matHeaderCellDef>
+            Modelo
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.modelo }}</td>
+        </ng-container>
+        <ng-container matColumnDef="marca">
+          <th mat-header-cell mat-sort-header="marca" *matHeaderCellDef>
+            Marca
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.marca }}</td>
+        </ng-container>
+        <ng-container matColumnDef="ano">
+          <th mat-header-cell mat-sort-header="ano" *matHeaderCellDef>Ano</th>
+          <td mat-cell *matCellDef="let element">{{ element.ano }}</td>
+        </ng-container>
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon
+              data-testid="edit-vehicle-button"
+              (click)="editVehicle(element, $event)"
+            >
+              edit
+            </mat-icon>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon
+              data-testid="delete-vehicle-button"
+              (click)="removeVehicle(element, $event)"
+            >
+              delete
+            </mat-icon>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          (click)="editVehicle(row, $event)"
+          *matRowDef="let row; columns: displayedColumns"
+        ></tr>
+      </table>
+    </ng-container>
+  </div>
+</figure>

@@ -8,7 +8,7 @@ import { IVehicleService } from '../models/vehicle.service.interface';
 export class VehicleService implements IVehicleService {
   constructor(readonly prismaService: PrismaService) {}
   async create(vehicleRequest: VehicleRequestDto): Promise<VehicleResponse> {
-    const vehicleCreate = this.prismaService.vehicle.create({
+    const vehicleCreate = await this.prismaService.vehicle.create({
       data: {
         board: vehicleRequest.board,
         chassi: vehicleRequest.chassi,
@@ -42,11 +42,9 @@ export class VehicleService implements IVehicleService {
     return vehicleResponse;
   }
 
-  async update(
-    vehicleID: number,
-    vehicleRequest: VehicleRequestDto
-  ): Promise<VehicleResponse> {
-    const updateVehicle = this.prismaService.vehicle.update({
+  async update(vehicleRequest: VehicleResponse): Promise<VehicleResponse> {
+    const vehicleID = vehicleRequest.vehicleID;
+    const updateVehicle = await this.prismaService.vehicle.update({
       where: { vehicleID },
       data: {
         board: vehicleRequest.board,
@@ -63,7 +61,7 @@ export class VehicleService implements IVehicleService {
     return vehicleResponse;
   }
   async delete(vehicleID: number): Promise<boolean> {
-    this.prismaService.vehicle.delete({
+    await this.prismaService.vehicle.delete({
       where: { vehicleID },
     });
 

@@ -54,14 +54,11 @@ export class VehicleController {
     return this.vehicleService.create(vehicleRequestDto);
   }
 
-  @Put(':vehicleID')
-  @ApiBody({ type: VehicleRequestDto })
+  @Put()
+  @ApiBody({ type: VehicleResponseDto })
   @ApiResponse({ type: VehicleResponseDto })
-  updateVehicle(
-    @Param('vehicleID') vehicleID: number,
-    @Body() vehicleRequestDto: VehicleRequestDto
-  ) {
-    return this.vehicleService.update(vehicleID, vehicleRequestDto);
+  updateVehicle(@Body() vehicleRequestDto: VehicleResponseDto) {
+    return this.vehicleService.update(vehicleRequestDto);
   }
 
   @Delete(':vehicleID')

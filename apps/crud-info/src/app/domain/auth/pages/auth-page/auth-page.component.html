@@ -1,24 +1,38 @@
-<h1>Login</h1>
-<h2>Sing Up</h2>
+<h1>Sing Up</h1>
+<h2>Entre com suas credencias</h2>
 <mat-icon> assignment_ind </mat-icon>
 <form [formGroup]="singUpForm">
   <mat-form-field appearance="outline">
     <mat-label> Email </mat-label>
-    <input formControlName="email" matInput placeholder="Email" type="email" />
+    <input
+      data-testid="email"
+      formControlName="email"
+      matInput
+      placeholder="Email"
+      type="email"
+    />
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label> Senha </mat-label>
     <input
       formControlName="password"
+      data-testid="password"
       matInput
       placeholder="Password"
       type="password"
     />
   </mat-form-field>
 
-  <button (click)="submitForm()" mat-raised-button color="primary">
+  <button
+    data-testid="submit"
+    (click)="submitForm()"
+    mat-raised-button
+    color="primary"
+  >
     Login
   </button>
-  <a [routerLink]="['sing-in']"> Não tem uma conta? Cadastre-se </a>
+  <a data-testid="router-link" [routerLink]="['sing-in']">
+    Não tem uma conta? Cadastre-se
+  </a>
 </form>
