@@ -71,15 +71,15 @@ Execute `ng build my-app` para compilar o projeto. Os artefatos de construção 
 
 Execute `ng test my-app` para executar os testes de unidade via [Jest](https://jestjs.io).
 
-Execute `nx afetado:teste` para executar os testes de unidade afetados por uma alteração.
+Execute `nx affected:test` para executar os testes de unidade afetados por uma alteração.
 
 ## Executando testes de ponta a ponta
 
 Execute `ng e2e my-app` para executar os testes de ponta a ponta via [Cypress](https://www.cypress.io).
 
-Execute `nx afetado:e2e` para executar os testes de ponta a ponta afetados por uma alteração.
+Execute `nx affected:e2e` para executar os testes de ponta a ponta afetados por uma alteração.
 
-## :hammer*and_wrench: \_Tecnologias*
+## :hammer_and_wrench: _Tecnologias_
 
 <div align="center">
 
@@ -132,8 +132,8 @@ Execute `nx afetado:e2e` para executar os testes de ponta a ponta afetados por u
 
 <div align="center">
 
-<a href="https://github.com/RyanDrop">
- <img src="https://avatars.githubusercontent.com/Joaovitorsw"  width="100px;" alt="Profile Photo RyanDrop" style="border-radius:50%" />
+<a href="https://github.com/Joaovitorsw">
+ <img src="https://avatars.githubusercontent.com/Joaovitorsw"  width="100px;" alt="Profile Photo Joaovitorsw" style="border-radius:50%" />
  <br/>
  <sub><b>Joaovitorsw</b></sub>
 </a>
@@ -148,11 +148,11 @@ Desenvolvido com ❤️ por Joaovitorsw Meus Contatos!
 
 ---
 
-## :balance*scale: \_Licença*
+## :balance_scale: _Licença_
 
 <div align="center">
 
-Copyright ©️ 2021 [RyanDrop ](https://github.com/Joaovitorsw).<br />
+Copyright ©️ 2021 [Joaovitorsw](https://github.com/Joaovitorsw).<br />
 This project is licensed by [MIT](./LICENSE).
 
 </div>
