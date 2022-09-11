@@ -17,9 +17,9 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('Request List API')
+    .setTitle('Vehicle Info API')
     .setDescription(
-      'Api feita para criação,leitura,atualização e remoção de veículos'
+      'Api feita para criação,leitura,atualização e remoção de veículos com autenticação JWT'
     )
     .setVersion('1.0')
     .addBearerAuth(
@@ -34,8 +34,8 @@ async function bootstrap() {
       'JWT-auth'
     )
     .build();
-  app.enableCors();
 
+  app.enableCors();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
   const port = process.env.PORT || 5000;

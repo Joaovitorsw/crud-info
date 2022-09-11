@@ -1,105 +1,160 @@
+<div align="right">
+  
+  [Portuguese](README.md)
+  
+</div>
 
+<div align="center">
 
-# MyWorkspace
+<img alt="infro-crud-logo" src=".github/assets/logo.bmp" width="300px" height="100px" style="border-radius:28px 0" />
 
-This project was generated using [Nx](https://nx.dev).
+</div>
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+<br>
+<br>
 
-🔎 **Smart, Fast and Extensible Build System**
+<p align="center"> 
+  <img alt="Top Language" src="https://img.shields.io/github/languages/top/Joaovitorsw/info?color=3498db&style=for-the-badge">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Joaovitorsw/info?color=3498db&style=for-the-badge&label=Ultimo%20Commit">   
+  <a href="https://github.com/Joaovitorsw">
+    <img alt="Developed by Joaovitorsw" src="https://img.shields.io/badge/Developer-Joaovitorsw-%3498db?color=3498db&style=for-the-badge&label=Desenvolvedor">
+  </a>  
+  <img alt="Project License" src="https://img.shields.io/apm/l/vim-mode?style=for-the-badge&label=licen%C3%A7a"/>   
+   <img alt="Project Status" src="https://img.shields.io/badge/Concluído-%3498db?color=greem&style=for-the-badge&label=Status">
 
-## Quick Start & Documentation
+</p>
 
-[Nx Documentation](https://nx.dev/angular)
+<p align="center">
+ <a href="#eye_speech_bubble-visualizar">Visualizar</a> •
+ <a href="#hammer_and_wrench-tecnologias">Tecnologias</a> • 
+ <a href="#brain-conceitos-aplicados">Conceitos</a> •
+ <a href="#boy-autor">Autor</a> •
+ <a href="#balance_scale-licença">Licença</a>
+</p>
 
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
+---
 
-[Interactive Tutorial](https://nx.dev/react-tutorial/01-create-application)
+## :eye_speech_bubble: **Visualizar**
 
-## Adding capabilities to your workspace
+<div align="center">
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+Deploy do front-end efetuado no [HEROKU](https://dashboard.heroku.com) para visualizar: [Clique Aqui](https://crud-info-api.herokuapp.com/)
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+|                              :computer:Desktop                               |                               :iphone: Mobile                               |
+| :--------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
+|  <kbd><img src=".github/assets/desktop-preview-1.bmp" alt="Tablet"/></kbd>   | <kbd><img src="./.github/assets/desktop-preview-1.bmp" alt="Mobile"/></kbd> |
+| <kbd><img src="./.github/assets/desktop-preview-2.bmp"  alt="Tablet"/></kbd> | <kbd><img src="./.github/assets/desktop-preview-2.bmp" alt="Mobile"/></kbd> |
+| <kbd><img src="./.github/assets/desktop-preview-3.bmp" alt="Tablet"/></kbd>  | <kbd><img src="./.github/assets/desktop-preview-3.bmp" alt="Mobile"/></kbd> |
 
-Below are our core plugins:
+</div>
+  
+---
+## :information_source: _Sobre_
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
+<div align="center">
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+Aplicação feita utilizando [Nx](https://nx.dev/), [Nest](https://nestjs.com/) ,[Angular](https://angular.io/) para criação de um crud de veiculos
 
-## Generate an application
+---
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
+</div>
 
-> You can use any of the plugins above to generate applications as well.
+## Servidor de desenvolvimento
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@my-workspace/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
+Execute `ng serve my-app` para um servidor dev. Navegue até http://localhost:4200/. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
 ## Build
 
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Execute `ng build my-app` para compilar o projeto. Os artefatos de construção serão armazenados no diretório `dist/`. Use o sinalizador `--prod` para uma compilação de produção.
 
-## Running unit tests
+## Executando testes de unidade
 
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+Execute `ng test my-app` para executar os testes de unidade via [Jest](https://jestjs.io).
 
-Run `nx affected:test` to execute the unit tests affected by a change.
+Execute `nx afetado:teste` para executar os testes de unidade afetados por uma alteração.
 
-## Running end-to-end tests
+## Executando testes de ponta a ponta
 
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+Execute `ng e2e my-app` para executar os testes de ponta a ponta via [Cypress](https://www.cypress.io).
 
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
+Execute `nx afetado:e2e` para executar os testes de ponta a ponta afetados por uma alteração.
 
-## Understand your workspace
+## :hammer*and_wrench: \_Tecnologias*
 
-Run `nx graph` to see a diagram of the dependencies of your projects.
+<div align="center">
 
-## Further help
+|         :globe_with_meridians: FrontEnd          |     :globe_with_meridians: Backend      |
+| :----------------------------------------------: | :-------------------------------------: |
+|    [HTML 5](https://www.w3schools.com/html/)     |       [Nest](https://nestjs.com/)       |
+|          [SCSS](https://sass-lang.com/)          |      [Prisma](https://nestjs.com/)      |
+|  [TypeScript](https://www.typescriptlang.org/)   | [Postgres](https://www.postgresql.org/) |
+|          [Angular](https://angular.io/)          | [Express](https://expressjs.com/pt-br/) |
+| [Angular Material](https://material.angular.io/) |     [Node](https://nodejs.org/en/)      |
 
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+---
 
+## :brain: _Conceitos Aplicados_
 
+<div align="center">
 
+|       :page_facing_up:       |
+| :--------------------------: |
+|         Mobile First         |
+|         Media Query          |
+|     Conventional Commits     |
+|    Testes Unitários e E2E    |
+|      Clean Code e SOLID      |
+|       Design Patterns        |
+|  Dynamic Template Rendering  |
+|        API Consuming         |
+| Progressive Web Application  |
+|             RXJS             |
+|     Observable Operators     |
+|        Atomic Commit         |
+|        HTTP Requests         |
+|    Async/Await Operators     |
+|        Domain Modules        |
+|      JwT Authentication      |
+|          HTTP REST           |
+|          Prisma ORM          |
+|      LazyLoading Module      |
+|      Prisma Migrations       |
+|        Prisma Client         |
+|        Prisma Schema         |
+| Nest Global Pipe Validation  |
+| Postgres Database Connection |
+|   Program Oriented Objects   |
+|       Injection Tokens       |
 
+---
 
+## :boy: _Autor_
 
-## ☁ Nx Cloud
+<div align="center">
 
-### Distributed Computation Caching & Distributed Task Execution
+<a href="https://github.com/RyanDrop">
+ <img src="https://avatars.githubusercontent.com/Joaovitorsw"  width="100px;" alt="Profile Photo RyanDrop" style="border-radius:50%" />
+ <br/>
+ <sub><b>Joaovitorsw</b></sub>
+</a>
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
+Desenvolvido com ❤️ por Joaovitorsw Meus Contatos!
 
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
+[![Linkedin Badge](https://img.shields.io/badge/-Joaovitorsw?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/joao-vitor-pereira-dos-santos/)
+[![Github Badge](https://img.shields.io/badge/-Joaovitorsw-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/Joaovitorsw)
+[![Outlook Badge](https://img.shields.io/badge/-Joaovitorsw-0078d4?style=flat-square&logo=microsoft-outlook&logoColor=white)](mailto:joaovitorswbr@gmail.com)
 
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
+</div>
 
-Visit [Nx Cloud](https://nx.app/) to learn more.
+---
+
+## :balance*scale: \_Licença*
+
+<div align="center">
+
+Copyright ©️ 2021 [RyanDrop ](https://github.com/Joaovitorsw).<br />
+This project is licensed by [MIT](./LICENSE).
+
+</div>
+
+---
