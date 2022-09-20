@@ -14,8 +14,8 @@
 <br>
 
 <p align="center"> 
-  <img alt="Top Language" src="https://img.shields.io/github/languages/top/Joaovitorsw/info?color=3498db&style=for-the-badge">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Joaovitorsw/info?color=3498db&style=for-the-badge&label=Ultimo%20Commit">   
+  <img alt="Top Language" src="https://img.shields.io/github/languages/top/Joaovitorsw/crud-info?color=3498db&style=for-the-badge">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Joaovitorsw/crud-info?color=3498db&style=for-the-badge&label=Ultimo%20Commit">   
   <a href="https://github.com/Joaovitorsw">
     <img alt="Developed by Joaovitorsw" src="https://img.shields.io/badge/Developer-Joaovitorsw-%3498db?color=3498db&style=for-the-badge&label=Desenvolvedor">
   </a>  
